@@ -16,11 +16,11 @@ public class HeapSort3 {
         int n = arr.length;
 
         // heapify
-        // 注意，此时我们的堆是从0开始索引的，参考MaxHeap的实现
         for (int i = parent(n-1); i >= 0; i--) {
             siftDown2(arr, n, i);
         }
 
+        // 核心代码
         for (int i = n - 1; i > 0; i--) {
             swap(arr, 0, i);
             siftDown2(arr, i, 0);

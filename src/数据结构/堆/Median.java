@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * @author feichaoyu
  */
-public class Median<E> {
+public class Median<E extends Comparable<E>> {
 
     /**
      * 最小堆
@@ -28,8 +28,7 @@ public class Median<E> {
     }
 
     private int compare(E e, E m) {
-        Comparable<? super E> cpmr = (Comparable<? super E>) e;
-        return cpmr.compareTo(m);
+        return e.compareTo(m);
     }
 
     public void addAll(Collection<? extends E> c) {
@@ -71,7 +70,7 @@ public class Median<E> {
 
     public static void main(String[] args) {
         Median<Integer> median = new Median<>();
-        median.addAll(Arrays.asList(34, 90, 67, 45, 1, 4, 5, 6, 7, 9, 10));
+        median.addAll(Arrays.asList(20, 30, 40, 50, 2, 4, 3, 5, 7, 8, 10));
         System.out.println(median.getMedian());
     }
 }

@@ -7,7 +7,7 @@ import java.util.PriorityQueue;
 /**
  * @author feichaoyu
  */
-public class TopK<E> {
+public class TopK<E extends Comparable<E>> {
 
     private PriorityQueue<E> p;
     private int k;
@@ -30,8 +30,8 @@ public class TopK<E> {
             return;
         }
 
-        Comparable<? super E> head = (Comparable<? super E>) p.peek();
-        if (head.compareTo(e) >= 0) {
+        E head = p.peek();
+        if (head != null && head.compareTo(e) >= 0) {
             // 小于等于TopK中的最小值，不用变
             return;
         }
@@ -47,7 +47,7 @@ public class TopK<E> {
      * @param <T>
      * @return TopK以数组形式
      */
-    public <T> T[] toArray(T[] a) {
+    public E[] toArray(E[] a) {
         return p.toArray(a);
     }
 
@@ -62,7 +62,7 @@ public class TopK<E> {
 
     public static void main(String[] args) {
         TopK<Integer> top5 = new TopK<>(5);
-        top5.addAll(Arrays.asList(100, 1, 5, 7, 34, 9, 5, 23, 21, 90));
+        top5.addAll(Arrays.asList(88, 1, 5, 7, 28, 12, 3, 22, 20, 70));
         System.out.println("top5：" + Arrays.toString(top5.toArray(new Integer[0])));
         System.out.println("5th：" + top5.getKth());
     }
