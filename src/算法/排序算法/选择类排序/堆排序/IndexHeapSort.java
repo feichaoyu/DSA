@@ -7,9 +7,6 @@ import 算法.排序算法.common.SortTestHelper;
  * @author feichaoyu
  */
 public class IndexHeapSort {
-    // 我们的算法类不允许产生任何实例
-    private IndexHeapSort() {
-    }
 
     // 使用最大索引堆进行堆排序, 来验证我们的最大索引堆的正确性
     // 最大索引堆的主要作用不是用于排序, 我们在这里使用排序只是为了验证我们的最大索引堆实现的正确性

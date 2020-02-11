@@ -8,9 +8,6 @@ import 算法.排序算法.common.SortTestHelper;
  * @author feichaoyu
  */
 public class SelectNumber {
-    // 我们的算法类不允许产生任何实例
-    private SelectNumber() {
-    }
 
     // 对arr[l...r]部分进行partition操作
     // 返回p, 使得arr[l...p-1] < arr[p] ; arr[p+1...r] > arr[p]

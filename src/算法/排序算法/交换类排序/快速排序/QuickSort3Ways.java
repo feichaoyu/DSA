@@ -7,9 +7,6 @@ import 算法.排序算法.插入类排序.直接插入排序.InsertionSort;
  * @author feichaoyu
  */
 public class QuickSort3Ways {
-    // 我们的算法类不允许产生任何实例
-    private QuickSort3Ways() {
-    }
 
     // 递归使用快速排序,对arr[l...r]的范围进行排序
     private static void sort(Comparable[] arr, int l, int r) {

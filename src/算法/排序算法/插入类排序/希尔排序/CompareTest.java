@@ -24,7 +24,7 @@ public class CompareTest {
 
         SortTestHelper.testSort("算法.排序算法.选择类排序.简单选择排序.SelectionSort", arr1);
         SortTestHelper.testSort("算法.排序算法.插入类排序.直接插入排序.InsertionSort", arr2);
-        SortTestHelper.testSort("算法.排序算法.交换类排序.冒泡排序.BubbleSort", arr3);
+        SortTestHelper.testSort("算法.排序算法.交换类排序.冒泡排序.BubbleSort3", arr3);
         SortTestHelper.testSort("算法.排序算法.插入类排序.希尔排序.ShellSort", arr4);
 
         System.out.println();
@@ -40,7 +40,7 @@ public class CompareTest {
 
         SortTestHelper.testSort("算法.排序算法.选择类排序.简单选择排序.SelectionSort", arr1);
         SortTestHelper.testSort("算法.排序算法.插入类排序.直接插入排序.InsertionSort", arr2);
-        SortTestHelper.testSort("算法.排序算法.交换类排序.冒泡排序.BubbleSort", arr3);
+        SortTestHelper.testSort("算法.排序算法.交换类排序.冒泡排序.BubbleSort3", arr3);
         SortTestHelper.testSort("算法.排序算法.插入类排序.希尔排序.ShellSort", arr4);
     }
 }

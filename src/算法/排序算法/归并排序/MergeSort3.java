@@ -9,9 +9,6 @@ import 算法.排序算法.插入类排序.直接插入排序.InsertionSort;
 // 在MergeSort3中, 我们一次性申请aux空间,
 // 并将这个辅助空间以参数形式传递给完成归并排序的各个子函数, 不需要向MergeSort2一样开辟多个空间, 避免了OOM的发生
 public class MergeSort3 {
-    // 我们的算法类不允许产生任何实例
-    private MergeSort3() {
-    }
 
     // 将arr[l...mid]和arr[mid+1...r]两部分进行归并
     // 其中aux为完成merge过程所需要的辅助空间

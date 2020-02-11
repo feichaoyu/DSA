@@ -7,9 +7,6 @@ import 算法.排序算法.插入类排序.直接插入排序.InsertionSort;
  * @author feichaoyu
  */
 public class QuickSort2Ways {
-    // 我们的算法类不允许产生任何实例
-    private QuickSort2Ways() {
-    }
 
     // 双路快速排序的partition
     // 返回p, 使得arr[l...p-1] <= arr[p] ; arr[p+1...r] >= arr[p]
@@ -25,20 +22,20 @@ public class QuickSort2Ways {
         int i = l + 1, j = r;
         while (true) {
             // 注意这里的边界, arr[i].compareTo(v) < 0, 不能是arr[i].compareTo(v) <= 0
-            // 思考一下为什么?
-
             // 不加等号如果遇到相等的情况，这时候while循环就会退出，即交换i和j的值，使得对于包含大量相同元素的数组，
             // 双方相等的数据就会交换，这样就可以一定程度保证两路的数据量平衡
+
+            // 从i开始向后遍历，如果遍历的元素e<v，则继续向后遍历，直到遍历的元素e>=v，则停止遍历
             while (i <= r && arr[i].compareTo(v) < 0) {
                 i++;
             }
 
-            // 注意这里的边界, arr[j].compareTo(v) > 0, 不能是arr[j].compareTo(v) >= 0
+            // 从j开始向前遍历，如果遍历的元素e>v，则继续向前遍历，直到遍历的元素e<=v，则停止遍历
             while (j >= l + 1 && arr[j].compareTo(v) > 0) {
                 j--;
             }
 
-            if (i > j) {
+            if (i >= j) {
                 break;
             }
 
@@ -47,6 +44,7 @@ public class QuickSort2Ways {
             j--;
         }
 
+        // 此时j指向的元素是数组中最后一个小于v的元素, i指向的元素是数组中第一个大于v的元素
         swap(arr, l, j);
 
         return j;

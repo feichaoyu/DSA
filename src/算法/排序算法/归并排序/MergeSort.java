@@ -9,10 +9,6 @@ import java.util.Arrays;
  */
 public class MergeSort {
 
-    // 我们的算法类不允许产生任何实例
-    private MergeSort() {
-    }
-
     // 将arr[l...mid]和arr[mid+1...r]两部分进行归并
     private static void merge(Comparable[] arr, int l, int mid, int r) {
 

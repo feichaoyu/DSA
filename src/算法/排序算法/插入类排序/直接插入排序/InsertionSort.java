@@ -6,8 +6,6 @@ import 算法.排序算法.common.SortTestHelper;
  * @author feichaoyu
  */
 public class InsertionSort {
-    private InsertionSort() {
-    }
 
     // 对整个arr数组使用InsertionSort排序
     public static void sort(Comparable[] arr) {

@@ -7,9 +7,6 @@ import 算法.排序算法.common.SortTestHelper;
  * @author feichaoyu
  */
 public class HeapSort2 {
-    // 我们的算法类不允许产生任何实例
-    private HeapSort2() {
-    }
 
     // 对整个arr数组使用HeapSort2排序
     // HeapSort2, 借助我们的heapify过程创建堆

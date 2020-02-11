@@ -21,11 +21,13 @@ public class CompareTest {
         Integer[] arr2 = Arrays.copyOf(arr1, arr1.length);
         Integer[] arr3 = Arrays.copyOf(arr1, arr1.length);
         Integer[] arr4 = Arrays.copyOf(arr1, arr1.length);
+        Integer[] arr5 = Arrays.copyOf(arr1, arr1.length);
 
         SortTestHelper.testSort("算法.排序算法.选择类排序.简单选择排序.SelectionSort", arr1);
         SortTestHelper.testSort("算法.排序算法.插入类排序.直接插入排序.InsertionSort", arr2);
         SortTestHelper.testSort("算法.排序算法.交换类排序.冒泡排序.BubbleSort", arr3);
         SortTestHelper.testSort("算法.排序算法.交换类排序.冒泡排序.BubbleSort2", arr4);
+        SortTestHelper.testSort("算法.排序算法.交换类排序.冒泡排序.BubbleSort3", arr5);
 
         System.out.println();
 
@@ -37,11 +39,13 @@ public class CompareTest {
         arr2 = Arrays.copyOf(arr1, arr1.length);
         arr3 = Arrays.copyOf(arr1, arr1.length);
         arr4 = Arrays.copyOf(arr1, arr1.length);
+        arr5 = Arrays.copyOf(arr1, arr1.length);
 
         SortTestHelper.testSort("算法.排序算法.选择类排序.简单选择排序.SelectionSort", arr1);
         SortTestHelper.testSort("算法.排序算法.插入类排序.直接插入排序.InsertionSort", arr2);
         SortTestHelper.testSort("算法.排序算法.交换类排序.冒泡排序.BubbleSort", arr3);
         SortTestHelper.testSort("算法.排序算法.交换类排序.冒泡排序.BubbleSort2", arr4);
+        SortTestHelper.testSort("算法.排序算法.交换类排序.冒泡排序.BubbleSort3", arr5);
 
         System.out.println();
 
@@ -56,11 +60,13 @@ public class CompareTest {
         arr2 = Arrays.copyOf(arr1, arr1.length);
         arr3 = Arrays.copyOf(arr1, arr1.length);
         arr4 = Arrays.copyOf(arr1, arr1.length);
+        arr5 = Arrays.copyOf(arr1, arr1.length);
 
         // 在这种情况下，不再测试选择排序算法
         //SortTestHelper.testSort("算法.排序算法.选择类排序.简单选择排序.SelectionSort", arr1);
         SortTestHelper.testSort("算法.排序算法.插入类排序.直接插入排序.InsertionSort", arr2);
-        SortTestHelper.testSort("算法.排序算法.交换类排序.冒泡排序.BubbleSort", arr3);
+       //SortTestHelper.testSort("算法.排序算法.交换类排序.冒泡排序.BubbleSort", arr3);
         SortTestHelper.testSort("算法.排序算法.交换类排序.冒泡排序.BubbleSort2", arr4);
+        SortTestHelper.testSort("算法.排序算法.交换类排序.冒泡排序.BubbleSort3", arr5);
     }
 }

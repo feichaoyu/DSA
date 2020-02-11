@@ -7,12 +7,8 @@ import 算法.排序算法.插入类排序.直接插入排序.InsertionSort;
  * @author feichaoyu
  */
 public class QuickSort {
-    // 我们的算法类不允许产生任何实例
-    private QuickSort() {
-    }
 
-    // 对arr[l...r]部分进行partition操作
-    // 返回p, 使得arr[l...p-1] < arr[p] ; arr[p+1...r] > arr[p]
+    // 对arr[l...r]部分进行partition操作, 返回p, 使得arr[l...p-1] < arr[p] ; arr[p+1...r] > arr[p]
     private static int partition(Comparable[] arr, int l, int r) {
 
         // 随机在arr[l...r]的范围中, 选择一个数值作为标定点pivot
@@ -20,11 +16,11 @@ public class QuickSort {
 
         Comparable v = arr[l];
 
-        int j = l; // arr[l+1...j] < v ; arr[j+1...i) > v
+        int j = l;
         for (int i = l + 1; i <= r; i++) {
             if (arr[i].compareTo(v) < 0) {
+                swap(arr, j + 1, i);
                 j++;
-                swap(arr, j, i);
             }
         }
 

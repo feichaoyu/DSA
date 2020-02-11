@@ -7,9 +7,6 @@ import 算法.排序算法.common.SortTestHelper;
  * @author feichaoyu
  */
 public class HeapSort {
-    // 我们的算法类不允许产生任何实例
-    private HeapSort() {
-    }
 
     // 对整个arr数组使用HeapSort排序
     // HeapSort, 将所有的元素依次添加到堆中, 在将所有元素从堆中依次取出来, 即完成了排序

@@ -6,9 +6,6 @@ import 算法.排序算法.common.SortTestHelper;
  * @author feichaoyu
  */
 public class HeapSort3 {
-    // 我们的算法类不允许产生任何实例
-    private HeapSort3() {
-    }
 
     // 不使用一个额外的最大堆, 直接在原数组上进行 原地堆排序
     public static void sort(Comparable[] arr) {

@@ -6,9 +6,6 @@ import 算法.排序算法.common.SortTestHelper;
  * @author feichaoyu
  */
 public class SelectionSort2 {
-    // 我们的算法类不允许产生任何实例
-    private SelectionSort2() {
-    }
 
     // 在每一轮中, 可以同时找到当前未处理元素的最大值和最小值
     public static void sort(Comparable[] arr) {

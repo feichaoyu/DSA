@@ -6,8 +6,6 @@ import 算法.排序算法.common.SortTestHelper;
  * @author feichaoyu
  */
 public class SelectionSort {
-    // 我们的算法类不允许产生任何实例
-    private SelectionSort(){}
 
     public static void sort(Comparable[] arr) {
 
