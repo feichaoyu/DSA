@@ -21,7 +21,7 @@ public class CompareTest {
         Integer[] arr2 = Arrays.copyOf(arr1, arr1.length);
         Integer[] arr3 = Arrays.copyOf(arr1, arr1.length);
 
-        SortTestHelper.testSort("算法.插入排序.InsertionSort", arr1);
+        SortTestHelper.testSort("算法.排序算法.插入类排序.直接插入排序.InsertionSort", arr1);
         SortTestHelper.testSort("算法.排序算法.归并排序.MergeSort", arr2);
         SortTestHelper.testSort("算法.排序算法.归并排序.MergeSort2", arr3);
 
@@ -37,7 +37,7 @@ public class CompareTest {
         arr2 = Arrays.copyOf(arr1, arr1.length);
         arr3 = Arrays.copyOf(arr1, arr1.length);
 
-        SortTestHelper.testSort("算法.插入排序.InsertionSort", arr1);
+        SortTestHelper.testSort("算法.排序算法.插入类排序.直接插入排序.InsertionSort", arr1);
         SortTestHelper.testSort("算法.排序算法.归并排序.MergeSort", arr2);
         SortTestHelper.testSort("算法.排序算法.归并排序.MergeSort2", arr3);
     }

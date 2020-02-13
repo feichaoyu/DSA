@@ -17,14 +17,12 @@ public class SelectNumber {
 
         // 随机在arr[l...r]的范围中, 选择一个数值作为标定点pivot
         swap(arr, l, (int) (Math.random() * (r - l + 1)) + l);
-
         Comparable v = arr[l];
-
-        int j = l; // arr[l+1...j] < v ; arr[j+1...i) > v
+        int j = l;
         for (int i = l + 1; i <= r; i++) {
             if (arr[i].compareTo(v) < 0) {
+                swap(arr, j + 1, i);
                 j++;
-                swap(arr, j, i);
             }
         }
 

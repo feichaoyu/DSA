@@ -12,6 +12,7 @@ public class MergeSort {
     // 将arr[l...mid]和arr[mid+1...r]两部分进行归并
     private static void merge(Comparable[] arr, int l, int mid, int r) {
 
+        // auxiliary 辅助的
         Comparable[] aux = Arrays.copyOfRange(arr, l, r + 1);
 
         // 初始化，i指向左半部分的起始索引位置l；j指向右半部分起始索引位置mid+1
