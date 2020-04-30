@@ -22,6 +22,6 @@ UnionFind5（路径压缩）在find的时候进行路径压缩，降低深度
 
 ![l2ZvIs.png](https://s2.ax1x.com/2020/01/08/l2ZvIs.png)
 
-UnionFind5（路径压缩优化）利用递归让节点全部指向根节点
+UnionFind6（路径压缩优化）利用递归让节点全部指向根节点
 
 ![l2KZnK.png](https://s2.ax1x.com/2020/01/08/l2KZnK.png)

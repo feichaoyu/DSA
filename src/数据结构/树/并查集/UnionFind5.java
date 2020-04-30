@@ -50,7 +50,12 @@ public class UnionFind5 implements UF {
         // 不断去查询自己的父节点, 直到到达根节点
         // 根节点的特点: 初始化parent时，parent[p] == p
         while (p != parent[p]) {
-            // 一行代码，压缩路径
+            // 压缩分裂（每个节点都要找祖父节点）
+//            int tmp = parent[p];
+//            parent[p] = parent[parent[p]];
+//            p = tmp;
+
+            // 路径分割（奇数节点找祖父节点）
             parent[p] = parent[parent[p]];
             p = parent[p];
         }

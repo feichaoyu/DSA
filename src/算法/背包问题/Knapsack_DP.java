@@ -5,6 +5,11 @@ import java.util.Arrays;
 /**
  * 动态规划
  *
+ * 状态定义：F(n, C) 将n个物品放入容量为C的背包
+ * 状态转移方程：F(i, c) = max{F(i-1, c), v(i)+F(i-1, c-w(i))}
+ * F(i-1, c) 表示不计算当前物品，直接计算后面的物品
+ * v(i)+F(i-1, c-w(i)) 表示计算当前物品，然后计算后面的物品
+ *
  * @author feichaoyu
  */
 public class Knapsack_DP {
