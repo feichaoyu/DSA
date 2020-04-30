@@ -14,6 +14,9 @@ public class SkipList<K, V> {
      */
     private static final int MAX_LEVEL = 32;
 
+    /**
+     * 生成高度时的概率
+     */
     private static final double P = 0.25;
 
     private int size;
