@@ -1,6 +1,9 @@
 package 数据结构.树.二分搜索树;
 
+import 剑指offer._07_ConstructBinaryTree.TreeNode;
+
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 import java.util.Stack;
 
@@ -109,22 +112,33 @@ public class BST<E extends Comparable<E>> {
     }
 
     /**
-     * 前序遍历，非递归实现（仅扩展思路）
+     * 前序遍历，非递归实现
      */
     public void preOrderNR() {
         Stack<Node> stack = new Stack<>();
-        stack.push(root);
-        while (!stack.isEmpty()) {
-            Node cur = stack.pop();
-            System.out.println(cur.e);
-
-            // 先压右，再压左
-            // 这样取出时，先取左，再取右
-            if (cur.right != null) {
-                stack.push(cur.right);
-            }
-            if (cur.left != null) {
-                stack.push(cur.left);
+//        stack.push(root);
+//        while (!stack.isEmpty()) {
+//            Node cur = stack.pop();
+//            System.out.println(cur.e);
+//
+//            // 先压右，再压左
+//            // 这样取出时，先取左，再取右
+//            if (cur.right != null) {
+//                stack.push(cur.right);
+//            }
+//            if (cur.left != null) {
+//                stack.push(cur.left);
+//            }
+//        }
+        Node cur = root;
+        while (cur != null || !stack.isEmpty()) {
+            if (cur != null) {
+                System.out.print(cur.e);
+                stack.push(cur);
+                cur = cur.left;
+            } else {
+                cur = stack.pop();
+                cur = cur.right;
             }
         }
     }
@@ -139,7 +153,7 @@ public class BST<E extends Comparable<E>> {
             return;
         }
 
-        System.out.println(node.e);
+        System.out.print(node.e);
         preOrder(node.left);
         preOrder(node.right);
     }
@@ -149,6 +163,27 @@ public class BST<E extends Comparable<E>> {
      */
     public void inOrder() {
         inOrder(root);
+    }
+
+    /**
+     * 中序遍历，非递归实现
+     */
+    public void inOrderNR() {
+
+        Stack<Node> stack = new Stack<>();
+        Node cur = root;
+        while (cur != null || !stack.isEmpty()) {
+            if (cur != null) {
+                stack.push(cur);
+                cur = cur.left;
+            }
+            // 当前节点无子树
+            else {
+                cur = stack.pop();
+                System.out.print(cur.e);
+                cur = cur.right;
+            }
+        }
     }
 
     /**
@@ -162,7 +197,7 @@ public class BST<E extends Comparable<E>> {
         }
 
         inOrder(node.left);
-        System.out.println(node.e);
+        System.out.print(node.e);
         inOrder(node.right);
     }
 
@@ -171,6 +206,35 @@ public class BST<E extends Comparable<E>> {
      */
     public void postOrder() {
         postOrder(root);
+    }
+
+    /**
+     * 后序遍历，非递归实现
+     */
+    public void postOrderNR() {
+
+        Stack<Node> stack = new Stack<>();
+        Node cur = root;
+        // 标记最近出栈的节点，用于判断是否是prevVisted节点的右孩子，如果是的话，就可以访问prevVisted节点
+        Node prevVisted = null;
+
+        while (cur != null || !stack.isEmpty()) {
+            if (cur != null) {
+                stack.push(cur);
+                cur = cur.left;
+            }
+            else {
+                cur = stack.peek().right;
+                if (cur != null && cur != prevVisted) {
+                    stack.push(cur);
+                    cur = cur.left;
+                } else {
+                    prevVisted = stack.pop();
+                    System.out.print(prevVisted.e);
+                    cur = null;
+                }
+            }
+        }
     }
 
     /**
@@ -185,7 +249,7 @@ public class BST<E extends Comparable<E>> {
 
         postOrder(node.left);
         postOrder(node.right);
-        System.out.println(node.e);
+        System.out.print(node.e);
     }
 
     /**

@@ -225,6 +225,7 @@ public class Case1 {
         if (i > start) {
             leftIsPostOrder = isAfterOrder(arr, start, i - 1);
         }
+        // 下面这个有点多余。走到这里的话，j = end
         if (j < end) {
             rightIsPostOrder = isAfterOrder(arr, i, end);
         }
