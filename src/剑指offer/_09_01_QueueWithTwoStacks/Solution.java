@@ -1,21 +1,35 @@
-package 练习题.栈;
+package 剑指offer._09_01_QueueWithTwoStacks;
 
 import java.util.Stack;
 
 /**
- * 栈实现的队列
+ * 用两个栈实现一个队列
+ *
+ * @author feichaoyu
  */
-public class StackQueue<T> {
+public class Solution {
+
+    public static void main(String[] args) {
+        StackQueue<Integer> queue = new StackQueue<>();
+        queue.enqueue(1);
+        queue.enqueue(2);
+        System.out.println("出队元素：" + queue.dequeue());
+        System.out.println("出队元素：" + queue.dequeue());
+        System.out.println("出队元素：" + queue.dequeue());
+    }
+}
+
+class StackQueue<T> {
 
     /**
      * 插入栈
      */
-    private Stack<T> pushStack = new Stack<>();
+    private final Stack<T> pushStack = new Stack<>();
 
     /**
      * 弹出栈
      */
-    private Stack<T> popStack = new Stack<>();
+    private final Stack<T> popStack = new Stack<>();
 
     /**
      * 入队
@@ -26,7 +40,7 @@ public class StackQueue<T> {
         pushStack.push(data);
     }
 
-    /**
+    /**LinkedList
      * 出队
      * 这里分两种情况：
      * 1.popStack不为空，可以直接弹出数据
@@ -47,14 +61,5 @@ public class StackQueue<T> {
             return popStack.pop();
         }
         return null;
-    }
-
-    public static void main(String[] args) {
-        StackQueue<Integer> queue = new StackQueue<>();
-        queue.enqueue(1);
-        queue.enqueue(2);
-        System.out.println("出队元素：" + queue.dequeue());
-        System.out.println("出队元素：" + queue.dequeue());
-        System.out.println("出队元素：" + queue.dequeue());
     }
 }

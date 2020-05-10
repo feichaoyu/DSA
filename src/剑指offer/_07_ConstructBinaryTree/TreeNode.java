@@ -10,7 +10,5 @@ public class TreeNode<T> {
 
     public TreeNode(T val) {
         this.val = val;
-        this.left = null;
-        this.right = null;
     }
 }

@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class Solution {
 
-    public static TreeNode<Integer> construct(int[] preorder, int[] inorder) {
+    public static TreeNode<Integer> buildTree(int[] preorder, int[] inorder) {
 
         if (preorder == null || inorder == null || preorder.length == 0 || inorder.length == 0 || preorder.length != inorder.length) {
             return null;
@@ -77,7 +77,7 @@ public class Solution {
 
         int[] pre = {1, 2, 4, 7, 3, 5, 6, 8};
         int[] in = {4, 7, 2, 1, 5, 3, 8, 6};
-        TreeNode<Integer> root = construct(pre, in);
+        TreeNode<Integer> root = buildTree(pre, in);
         // 对重建后的树，进行前中后序遍历，验证是否正确
         List<Integer> preorder = preorderRecursively(root);
         List<Integer> inorder = inorderRecursively(root);

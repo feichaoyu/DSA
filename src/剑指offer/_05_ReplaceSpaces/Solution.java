@@ -1,5 +1,7 @@
 package 剑指offer._05_ReplaceSpaces;
 
+import java.util.Arrays;
+
 /**
  * 从后向前遍历
  * 时间复杂度：O(n)
@@ -9,10 +11,13 @@ package 剑指offer._05_ReplaceSpaces;
  */
 public class Solution {
 
-    public static char[] replaceBlank(char[] data, int length) {
+    public static String replaceSpace(String s) {
 
-        if (data == null || length <= 0) {
-            return null;
+        char[] data = s.toCharArray();
+        int length = s.length();
+
+        if (length == 0) {
+            return "";
         }
 
         int newLength = data.length;
@@ -43,14 +48,12 @@ public class Solution {
             p1--;
             p2--;
         }
-        return newData;
+        return String.valueOf(newData);
     }
 
     public static void main(String[] args) {
 
-        char[] data = "We are happy.".toCharArray();
-        System.out.println(data);
-        char[] newData = replaceBlank(data, data.length);
-        System.out.println(newData);
+        String s = "We are happy.";
+        System.out.println(replaceSpace(s));
     }
 }

@@ -1,7 +1,8 @@
 package 剑指offer._06_PrintListInReversedOrder;
 
-import jdk.nashorn.internal.ir.IfNode;
-
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Stack;
 
 /**
@@ -9,16 +10,26 @@ import java.util.Stack;
  */
 public class Solution {
 
-    // 递归
-    public static void printReversinglyRecursively(ListNode<Integer> node) {
+    private static List<Integer> list = new ArrayList<>();
 
+    // 递归
+    public static int[] reversePrint(ListNode<Integer> head) {
+        printReversinglyRecursively(head);
+        int[] result = new int[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            result[i] = list.get(i);
+        }
+        return result;
+    }
+
+    private static void printReversinglyRecursively(ListNode<Integer> node) {
         if (node == null) {
             return;
         }
 
         // 每当访问一个节点，先递归输出后面的节点，再输出该节点本身
         printReversinglyRecursively(node.next);
-        System.out.print(node.val);
+        list.add(node.val);
     }
 
     // 非递归，用栈模拟递归
@@ -44,8 +55,7 @@ public class Solution {
         ListNode<Integer> head = new ListNode<>(1);
         head.next = new ListNode<>(2);
         head.next.next = new ListNode<>(3);
-        printReversinglyRecursively(head);
-        System.out.println();
-        printReversinglyIteratively(head);
+        int[] res = reversePrint(head);
+        System.out.println(Arrays.toString(res));
     }
 }
