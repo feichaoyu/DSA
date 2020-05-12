@@ -1,6 +1,4 @@
-package 剑指offer._05_ReplaceSpaces;
-
-import java.util.Arrays;
+package 剑指offer._05_01_ReplaceSpaces;
 
 /**
  * 从后向前遍历
