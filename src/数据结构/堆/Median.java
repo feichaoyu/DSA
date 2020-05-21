@@ -48,7 +48,7 @@ public class Median<E extends Comparable<E>> {
             // 小于等于中值，加入最大堆
             maxP.add(e);
         } else {
-            // 大于中值，加入最大堆
+            // 大于中值，加入最小堆
             minP.add(e);
         }
 
