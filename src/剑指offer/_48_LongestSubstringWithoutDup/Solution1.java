@@ -10,7 +10,7 @@ public class Solution1 {
     public int lengthOfLongestSubstring(String s) {
 
         // 最多256个ASCII码字符
-        int[] freq = new int[256];
+        int[] freq = new int[128];
 
         // sliding window: s[l...r]
         // r初始化为-1是为了让窗口一开始不包含任何元素
