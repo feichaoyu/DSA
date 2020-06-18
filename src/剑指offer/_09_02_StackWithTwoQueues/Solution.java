@@ -16,7 +16,7 @@ public class Solution {
         System.out.println("弹出元素：" + stack.pop());
         System.out.println("弹出元素：" + stack.pop());
         System.out.println("弹出元素：" + stack.pop());
-    }
+    } 
 }
 
 class QueueStack<T> {

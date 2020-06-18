@@ -152,7 +152,7 @@ public class SingleLinkedList<E> extends AbstractList<E> {
      * 反转链表
      */
     public void reverseNR() {
-        first = reverse(first);
+        first = reverseNR(first);
     }
 
     /**
