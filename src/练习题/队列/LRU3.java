@@ -13,8 +13,6 @@ public class LRU3 extends LinkedHashMap<Integer, Integer> {
      */
     private int cacheSize;
 
-    private Map<Integer, Integer> map;
-
     public LRU3(int cacheSize) {
         super(cacheSize, 0.75f, true);
         this.cacheSize = cacheSize;
