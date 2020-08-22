@@ -43,10 +43,12 @@ public class LRU2 extends LinkedHashMap<Integer, Integer> {
         cache.print();                          // {1=1, 2=2} 右边是头
         System.out.println(cache.get(1));       // 返回  1
         cache.print();                          // {2=2, 1=1}
-        cache.put(3, 3);                        // 该操作会使得密钥 2 作废
-        System.out.println(cache.get(2));       // 返回 -1 (未找到)
-        cache.put(4, 4);                        // 该操作会使得密钥 1 作废
-        System.out.println(cache.get(1));       // 返回 -1 (未找到)
+        cache.put(3, 3);                        // 该操作会使得key 2 作废
+        cache.print();                          // {1=1, 3=3}
+        System.out.println(cache.get(2));       // 返回 -1
+        cache.put(4, 4);                        // 该操作会使得key 1 作废
+        cache.print();                          // {3=3, 4=4}
+        System.out.println(cache.get(1));       // 返回 -1
         System.out.println(cache.get(3));       // 返回  3
         System.out.println(cache.get(4));       // 返回  4
         cache.print();                          // {3=3, 4=4}

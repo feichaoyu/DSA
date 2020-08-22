@@ -6,7 +6,7 @@ import java.util.HashMap;
 /**
  * 哈希表+队列
  */
-public class LRU {
+public class LRU<K, V> {
 
     /**
      * 缓存大小
@@ -16,12 +16,12 @@ public class LRU {
     /**
      * 双端队列
      */
-    private ArrayDeque<Integer> queue = new ArrayDeque<>(cacheSize);
+    private ArrayDeque<K> queue = new ArrayDeque<>(cacheSize);
 
     /**
      * 哈希表
      */
-    private HashMap<Integer, Integer> map = new HashMap<>(cacheSize);
+    private HashMap<K, V> map = new HashMap<>(cacheSize);
 
     public LRU(int cacheSize) {
         this.cacheSize = cacheSize;
@@ -36,56 +36,58 @@ public class LRU {
         return queue.size() == cacheSize;
     }
 
-    public int get(int key) {
-        int value = map.getOrDefault(key, -1);
-        if (value != -1) {
-            queue.remove(key);
-            queue.addFirst(key);
+    public V get(K k) {
+        if (map.get(k) != null) {
+            queue.remove(k);
+            queue.addLast(k);
+            return map.get(k);
         }
-        return value;
+        return null;
     }
 
-    public void put(int key, int value) {
-        if (!map.containsKey(key)) {
-            // 如果队列满，需要删除队尾key
+    // 队列头部出来，队列尾部进入
+    public void put(K k, V v) {
+        if (!map.containsKey(k)) {
+            // 如果队列满，需要删除队头key
             if (isQueueFull()) {
-                map.remove(queue.getLast());
-                queue.pollLast();
+                map.remove(queue.pollFirst());
             }
-            // 把新缓存的key添加到队首
-            queue.addFirst(key);
+            // 把新缓存的key添加到队尾
+            queue.addLast(k);
             // 同时添加到哈希表中
-            map.put(key, value);
+            map.put(k, v);
         }
-        // key已存在，则删除之后，重新插入队头
-        else if (key != queue.getFirst()) {
-            queue.remove(key);
-            queue.addFirst(key);
+        // key已存在，判断不在队尾就删除，然后重新插入队尾
+        else if (k != queue.getLast()) {
+            queue.remove(k);
+            queue.addLast(k);
         }
     }
 
     private void print() {
         StringBuilder str = new StringBuilder();
         str.append("{");
-        for (int key : queue) {
+        for (K key : queue) {
             str.append(key + "=" + map.get(key) + ", ");
         }
         System.out.println(str.substring(0, str.length() - 2) + "}");
     }
 
     public static void main(String[] args) {
-        LRU cache = new LRU(2);
+        LRU<Integer, Integer> cache = new LRU<>(2);
         cache.put(1, 1);
         cache.put(2, 2);
-        cache.print();                          // {2=2, 1=1} 左边是头
+        cache.print();                          // {1=1, 2=2} 右边是头
         System.out.println(cache.get(1));       // 返回  1
-        cache.print();                          // {1=1, 2=2}
-        cache.put(3, 3);                        // 该操作会使得密钥 2 作废
-        System.out.println(cache.get(2));       // 返回 -1 (未找到)
-        cache.put(4, 4);                        // 该操作会使得密钥 1 作废
-        System.out.println(cache.get(1));       // 返回 -1 (未找到)
+        cache.print();                          // {2=2, 1=1}
+        cache.put(3, 3);                  // 该操作会使得key 2 作废
+        cache.print();                          // {1=1, 3=3}
+        System.out.println(cache.get(2));       // 返回 null
+        cache.put(4, 4);                  // 该操作会使得key 1 作废
+        cache.print();                          // {3=3, 4=4}
+        System.out.println(cache.get(1));       // 返回 null
         System.out.println(cache.get(3));       // 返回  3
         System.out.println(cache.get(4));       // 返回  4
-        cache.print();                          // {4=4, 3=3}
+        cache.print();                          // {3=3, 4=4}
     }
 }
