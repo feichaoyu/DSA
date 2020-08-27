@@ -1,4 +1,4 @@
-package 分类刷题.队列;
+package 分类刷题.队列.lru;
 
 import java.util.ArrayDeque;
 import java.util.HashMap;

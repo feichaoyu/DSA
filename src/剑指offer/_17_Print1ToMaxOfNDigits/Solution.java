@@ -1,7 +1,5 @@
 package 剑指offer._17_Print1ToMaxOfNDigits;
 
-import java.util.ArrayList;
-
 /**
  * 大数问题（用字符串）
  *
@@ -21,7 +19,7 @@ public class Solution {
             while (index < str.length() && str.charAt(index) == '0') {
                 index++;
             }
-            System.out.println(str.toString().substring(index));
+            System.out.println(str.substring(index));
         }
     }
 

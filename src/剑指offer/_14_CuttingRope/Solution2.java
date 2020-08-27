@@ -1,7 +1,5 @@
 package 剑指offer._14_CuttingRope;
 
-import java.util.Arrays;
-
 /**
  * 动态规划
  * 定义状态：dp[i] 表示剪长度为 i 绳子的最大值
