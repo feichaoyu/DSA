@@ -46,7 +46,7 @@ public class Solution2 {
             } else if (m > 0 && dp[m][n] == dp[m - 1][n]) {
                 m--;
             } else {
-                res[index--] = chars1[m-1];
+                res[index--] = chars1[m - 1];
                 m--;
                 n--;
             }

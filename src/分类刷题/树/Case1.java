@@ -65,7 +65,7 @@ public class Case1 {
             root = new TreeNode();
             int mid = start + (end - start + 1) / 2;
             // 数组中间元素作为根节点
-            root.data = arr[mid];
+            root.val = arr[mid];
             // 递归构造左半边子树
             root.left = arrayToTree(arr, start, mid - 1);
             // 递归构造右半边子树
@@ -88,7 +88,7 @@ public class Case1 {
         }
 
         inOrder(root.left);
-        System.out.print(root.data + " ");
+        System.out.print(root.val + " ");
         inOrder(root.right);
     }
 
@@ -102,7 +102,7 @@ public class Case1 {
         q.add(root);
         while (!q.isEmpty()) {
             TreeNode cur = q.remove();
-            System.out.print(cur.data + " ");
+            System.out.print(cur.val + " ");
 
             if (cur.left != null) {
                 q.add(cur.left);
@@ -127,12 +127,12 @@ public class Case1 {
 
         int leftSum = findMaxSubTree(root.left, maxRoot);
         int rightSum = findMaxSubTree(root.right, maxRoot);
-        int sum = leftSum + rightSum + root.data;
+        int sum = leftSum + rightSum + root.val;
 
         // 更新最大值
         if (sum > maxSum) {
             maxSum = sum;
-            maxRoot.data = root.data;
+            maxRoot.val = root.val;
         }
 
         return sum;
@@ -152,7 +152,7 @@ public class Case1 {
         if (root1 == null || root2 == null) {
             return false;
         }
-        if (root1.data == root2.data) {
+        if (root1.val == root2.val) {
             return isEqual(root1.left, root2.left) && isEqual(root1.right, root2.right);
         } else {
             return false;
@@ -332,7 +332,7 @@ public class Case1 {
 
         TreeNode newTree = new TreeNode();
         // 复制根结点
-        newTree.data = root.data;
+        newTree.val = root.val;
         // 复制左子树
         newTree.left = copyTree(root.left);
         // 复制右子树
@@ -351,8 +351,8 @@ public class Case1 {
      */
     public static void findRoad(TreeNode root, int num, int sum, List<Integer> list) {
         // 记录当前遍历的root结点
-        sum += root.data;
-        list.add(root.data);
+        sum += root.val;
+        list.add(root.val);
         // 当前结点是叶子结点且遍历的路径上所有结点的和等于num
         if (root.left == null && root.right == null && sum == num) {
             // 打印
@@ -405,12 +405,12 @@ public class Case1 {
         TreeNode minNode = getMinNode(root);
 
         // 中间值
-        int mid = minNode.data + (maxNode.data - minNode.data) / 2;
+        int mid = minNode.val + (maxNode.val - minNode.val) / 2;
 
         TreeNode result = null;
         while (root != null) {
             // 当前结点的值不大于f，则在右子树找
-            if (root.data <= mid) {
+            if (root.val <= mid) {
                 root = root.right;
             }
             // 当前结点的值大于f，则在左子树找
@@ -492,9 +492,9 @@ public class Case1 {
                 (3) allMax = root.data + sumLeft + sumRight (左右子树最大路径和都不为负)
              */
 
-            int leftMax = root.data + sumLeft;
-            int rightMax = root.data + sumRight;
-            int allMax = root.data + sumLeft + sumRight;
+            int leftMax = root.val + sumLeft;
+            int rightMax = root.val + sumRight;
+            int allMax = root.val + sumLeft + sumRight;
             int tmpMax = Max(allMax, leftMax, rightMax);
             if (tmpMax > maxSum2) {
                 maxSum2 = tmpMax;
@@ -502,7 +502,7 @@ public class Case1 {
 
             // subMax表示左子树和右子树最大值
             int subMax = Math.max(sumLeft, sumRight);
-            return root.data + subMax;
+            return root.val + subMax;
         }
     }
 
@@ -549,19 +549,19 @@ public class Case1 {
         TreeNode maxRoot = new TreeNode();
         findMaxSubTree(root, maxRoot);
         System.out.println("最大子树和为：" + maxSum);
-        System.out.println("对应子树的根节点为：" + maxRoot.data);
+        System.out.println("对应子树的根节点为：" + maxRoot.val);
 
         // 5.将二叉树转换成排好序的双向链表
         treeToLinkedList(root);
         System.out.print("转换后双向链表正向遍历：");
         TreeNode cur;
         for (cur = pHead; cur != null; cur = cur.right) {
-            System.out.print(cur.data + " ");
+            System.out.print(cur.val + " ");
         }
         System.out.println();
         System.out.print("转换后双向链表反向遍历：");
         for (cur = pEnd; cur != null; cur = cur.left) {
-            System.out.print(cur.data + " ");
+            System.out.print(cur.val + " ");
         }
         System.out.println();
 
@@ -584,7 +584,7 @@ public class Case1 {
         TreeNode node2 = root7.left.right;
         TreeNode commonParentNode = findParentNode2(root7, node1, node2);
         if (commonParentNode != null) {
-            System.out.println(node1.data + "与" + node2.data + "的最近公共父结点为：" + commonParentNode.data);
+            System.out.println(node1.val + "与" + node2.val + "的最近公共父结点为：" + commonParentNode.val);
         } else {
             System.out.println("没有公共父结点");
         }
@@ -610,7 +610,7 @@ public class Case1 {
         // 11.找出二叉树中第一个（相距最近）大于中间值的结点
         int[] arr11 = {1, 2, 3, 4, 5, 6, 7};
         TreeNode root11 = arrayToTree(arr11, 0, arr11.length - 1);
-        System.out.println("第一个（相距最近）大于中间值的结点：" + getNode(root11).data);
+        System.out.println("第一个（相距最近）大于中间值的结点：" + getNode(root11).val);
 
         // 12.找出二叉树中路径最大的和，路径可以以任意结点作为起点和终点
         int[] arr12 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};

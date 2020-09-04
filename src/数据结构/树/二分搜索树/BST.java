@@ -1,9 +1,6 @@
 package 数据结构.树.二分搜索树;
 
-import 剑指offer._07_ConstructBinaryTree.TreeNode;
-
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
 import java.util.Stack;
 
