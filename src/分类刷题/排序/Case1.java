@@ -1,7 +1,7 @@
 package 分类刷题.排序;
 
 /**
- * @author feichaoyu
+ * 给定一个无序数组，求排序之后，相邻两数的最大差值，要求时间复杂度为O(n)
  */
 public class Case1 {
     public static void main(String[] args) {
