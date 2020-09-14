@@ -3,7 +3,59 @@
 [数组中数字出现的次数 I](src/剑指offer/_56_01_Numbers|AppearOnce/Solution.java)
 
 ### 哈希表
-[数组中重复的数字](src/剑指offer/_03_01_DuplicationInArray)
+[数组中重复的数字](src/剑指offer/_03_01_数组中重复的数字/Solution3.java)
+
+### 数组
+[数组中出现次数超过一半的数字](src/剑指offer/_39_数组中出现次数超过一半的数字/Solution3.java)
+
+### 链表
+[复杂链表的复制](src/剑指offer/_35_复杂链表的复制/Solution2.java)
+
+### 栈
+[用两个栈实现队列](src/剑指offer/_09_01_用两个栈实现队列/Solution.java)
+
+[最小栈](src/剑指offer/_30_最小栈/MinStack.java)
+
+[根据入栈序列判断出栈序列](src/剑指offer/_31_根据入栈序列判断出栈序列/Solution.java)
+
+### 队列
+[用两个队列实现栈](src/剑指offer/_09_02_用两个队列实现栈/Solution.java)
+
+### 堆
+[最小的K个数](src/剑指offer/_40_最小的K个数/Solution2.java)
+
+[数据流中的中位数](src/剑指offer/_41_数据流中的中位数/MedianFinder.java)
+
+### 树
+[二叉搜索树的后序遍历序列](src/剑指offer/_33_二叉搜索树的后序遍历序列/Solution1.java)
+
+[二叉树中和为某一值的路径](src/剑指offer/_34_二叉树中和为某一值的路径/Solution.java)
+
+[二叉搜索树与双向链表](src/剑指offer/_36_二叉搜索树与双向链表/Solution.java)
+
+[序列化二叉树](src/剑指offer/_37_序列化二叉树/Solution.java)
+
+[二叉搜索树的最近公共祖先](src/剑指offer/_68_01_二叉搜索树的最近公共祖先/Solution.java)
+
+[二叉树的最近公共祖先](src/剑指offer/_68_02_二叉树的最近公共祖先/Solution.java)
+
+### 字符串
+[左旋转字符串](src/剑指offer/_58_02_左旋转字符串/Solution.java)
+
+### 双指针
+[翻转单词顺序](src/剑指offer/_58_01_翻转单词顺序/Solution.java)
+
+### 回溯
+[字符串的排列](src/剑指offer/_38_字符串的排列/Solution.java)
+
+### 动态规划
+[礼物的最大价值](src/剑指offer/_47_礼物的最大价值/Solution2.java)
+
+[一次买卖股票的最大利润](src/剑指offer/_63_01_一次买卖股票的最大利润/Solution.java)
+
+### 贪心算法
+[多次买卖股票的最大利润](src/剑指offer/_63_02_多次买卖股票的最大利润/Solution.java)
+
 
 ## 分类刷题
 
