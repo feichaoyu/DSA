@@ -1,4 +1,4 @@
-package 剑指offer._52_FirstCommonNodesInLists;
+package 剑指offer._52_两个链表的第一个公共节点;
 
 /**
  * @author feichaoyu

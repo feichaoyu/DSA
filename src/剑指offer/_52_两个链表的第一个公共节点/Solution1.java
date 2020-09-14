@@ -1,4 +1,4 @@
-package 剑指offer._52_FirstCommonNodesInLists;
+package 剑指offer._52_两个链表的第一个公共节点;
 
 /**
  * 先遍历一遍得到两个链表的长度，然后让长度长的先走，走的步数是两者差值。然后再一起走，直到啷个节点相等（注意不是比较值）

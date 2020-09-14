@@ -1,4 +1,4 @@
-package 剑指offer._52_FirstCommonNodesInLists;
+package 剑指offer._52_两个链表的第一个公共节点;
 
 /**
  * 使用两个指针 node1，node2 分别指向两个链表 headA，headB 的头结点，然后同时分别逐结点遍历，
